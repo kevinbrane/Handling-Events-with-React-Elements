@@ -1,31 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
+import  { Slider }  from './Components/Slider.jsx'
 import './App.css'
 
 function App() {
 
-  const [isDarkTheme, setIsDarkTheme] = useState(false)
-
-  const changeTheme = () => {
-    setIsDarkTheme(!isDarkTheme)
-    console.log('entró')
-  };
-
-  useEffect(() => {
-    const body = document.body;
-    if (isDarkTheme) {
-      body.classList.add('dark');
-    } else {
-      body.classList.remove('dark');
-    }
-  }, [isDarkTheme]);
-
   return (
     <>
-      <label className="switch" htmlFor="checkbox">
-        <input type="checkbox" id="checkbox" onClick= {changeTheme}/>
-        <div className="slider round"></div>
-      </label>
+    <Slider/>
     {React.createElement('h1', { style: { color: '#999', fontSize: '19px' } }, 'Solar System Planets')}
       <ul className= {isDarkTheme ? 'planet-list dark' : 'planet-list'}>
         <li>Mercury</li>
